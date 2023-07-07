@@ -1,9 +1,11 @@
 from django.db import models
 
+
 # Create your models here.
 class Payment(models.Model):
+    
       amount = models.DecimalField(max_digits=6,decimal_places=2)
-      order = models.CharField(max_length=32)
+      ordernumber = models.CharField(max_length=32)
       name =models.CharField(max_length=32)
       status = models.CharField(max_length=32)
       method_of_payment = models.CharField(max_length=32)
