@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 # 
-class Notifications(models.Model):
+class Notification(models.Model):
       recipient =models.CharField(max_length=32)
       message = models.TextField(max_length=100)
       date = models.DateField()

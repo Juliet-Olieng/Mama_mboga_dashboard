@@ -1,12 +1,14 @@
 from django.db import models
 from payments.models import Payment
 from vendor.models import Vendor
+from customer.models import Customer
 
 
 # Create your models here.
 class Order(models.Model):
     
     vendors=models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    customer=models.ForeignKey(Customer, on_delete=models.CASCADE)
     payment=models.OneToOneField(Payment, on_delete=models.PROTECT,null=True)
     name =models.CharField(max_length=32)
     date = models.DateField()
